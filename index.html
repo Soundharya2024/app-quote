@@ -44,25 +44,25 @@
       .ribbon::before {
         left: -10px;
         top: 0;
-        border-width: 30px;
+        border-width: 27.5px;
         border-color: transparent transparent transparent white;
       }
       .ribbon::after {
         right: -10px;
         top: 0;
-        border-width: 30px;
+        border-width: 27.5px;
         border-color: transparent white transparent transparent;
       }
       .fourth-page table th,
       .fourth-page table td {
         border: 2px solid #99aeff;
-        padding: 15px;
-        font-size: 1.2rem;
+        padding: 20px;
+        font-size: 16px;
       }
     </style>
   </head>
   <body>
-    <div class="first-page">
+    <div class="first-page" style="background-color: #fefff9">
       <div class="curved-header w-100 d-flex" style="height: 200px">
         <img
           src="./imgs/CurvedHeader.png"
@@ -192,7 +192,7 @@
     </div>
     <div
       class="third-page pt-5 pb-5"
-      style="padding-left: 6rem; padding-right: 6rem"
+      style="padding-left: 6rem; padding-right: 6rem; background-color: #fefff9"
     >
       <div class="d-flex align-items-center">
         <svg
@@ -275,25 +275,50 @@
         </tbody>
       </table>
     </div>
-    <div class="fourth-page pt-5" style="padding-bottom: 11rem">
+    <div
+      class="fourth-page"
+      style="
+        padding-top: 2.5rem;
+        padding-bottom: 11rem;
+        background-color: #fefff9;
+      "
+    >
       <div
         class="ribbon page-title-container d-inline-flex position-relative w-100 overflow-hidden justify-content-center align-items-center"
-        style="background: #0863e7; height: 60px"
+        style="background: #0863e7; height: 55px"
       >
-        <span class="d-inline-block fs-1 fw-bold text-white">
+        <span
+          class="d-inline-block text-white"
+          style="font-weight: 900; font-size: 2rem; letter-spacing: 1px"
+        >
           Cost and Payment Terms
         </span>
       </div>
-      <div class="page-content px-5">
+      <div class="page-content" style="padding-left: 5rem; padding-right: 5rem">
         <p
           class="text-uppercase text-center mt-5 mb-3 fw-medium"
-          style="letter-spacing: 2px; font-size: 1.5rem"
+          style="font-size: 1.15rem; letter-spacing: 1px"
         >
-          No of estimated business days required to complete the project
+          No of estimated business days required to complete <br />
+          the project
         </p>
-        <p class="text-center" style="font-size: 3rem; color: #004aad">19</p>
-        <p class="fw-semibold m-0" style="font-size: 1.5rem">Project Budget</p>
-        <table class="w-100 text-center my-5">
+        <p
+          class="text-center"
+          style="
+            font-size: 4rem;
+            color: #004aad;
+            text-shadow: -2px -2px 4px #004aad20;
+          "
+        >
+          19
+        </p>
+        <p
+          class="m-0"
+          style="font-size: 1.3rem; font-weight: 800; letter-spacing: 1px"
+        >
+          Project Budget
+        </p>
+        <table class="w-100 text-center my-4">
           <thead style="background-color: #0863e7; color: #ffffff">
             <tr>
               <th class="fw-normal">Description</th>
@@ -303,17 +328,25 @@
           <tbody>
             <tr>
               <td>Total Development Cost</td>
-              <td><i class="bi bi-currency-rupee"></i> 30800</td>
+              <td>
+                <i class="bi bi-currency-rupee" style="font-size: 16px"></i>
+                30800
+              </td>
             </tr>
           </tbody>
         </table>
-        <p class="fs-5" style="margin-bottom: 3rem">
-          <span class="fw-semibold fs-5">Note: </span>The project cost mentioned
-          above is exclusive of taxes. An additional 18% GST will be applicable
-          to the final amount.
+        <p style="margin-bottom: 3rem; font-size: 16px">
+          <span class="fw-bold" style="font-size: 16px">Note: </span>The project
+          cost mentioned above is exclusive of taxes. An additional 18% GST will
+          be applicable to the final amount.
         </p>
-        <p class="fw-semibold m-0" style="font-size: 1.5rem">Payment Term</p>
-        <table class="w-100 text-center my-5">
+        <p
+          class="m-0"
+          style="font-size: 1.4rem; font-weight: 800; letter-spacing: 1px"
+        >
+          Payment Term
+        </p>
+        <table class="w-100 text-center mt-4" style="margin-bottom: 7.8rem">
           <thead style="background-color: #cdd6ff">
             <tr>
               <th>Payment Phase</th>
