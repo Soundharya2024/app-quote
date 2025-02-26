@@ -23,10 +23,18 @@
         font-family: Poppins;
         font-size: 13px;
       }
-      .cover-page .title-container .title-info-container span:first-child {
+      .first-page
+        .cover-page
+        .title-container
+        .title-info-container
+        span:first-child {
         width: 150px;
       }
-      .cover-page .title-container .title-info-container span:last-child {
+      .first-page
+        .cover-page
+        .title-container
+        .title-info-container
+        span:last-child {
         width: 250px;
       }
       .third-page table th,
@@ -35,19 +43,19 @@
         padding: 10px;
         font-size: 1.2rem;
       }
-      .ribbon::before,
+      .fourth-page .ribbon::before,
       .ribbon::after {
         content: "";
         position: absolute;
         border-style: solid;
       }
-      .ribbon::before {
+      .fourth-page .ribbon::before {
         left: -10px;
         top: 0;
         border-width: 27.5px;
         border-color: transparent transparent transparent white;
       }
-      .ribbon::after {
+      .fourth-page .ribbon::after {
         right: -10px;
         top: 0;
         border-width: 27.5px;
@@ -58,6 +66,25 @@
         border: 2px solid #99aeff;
         padding: 20px;
         font-size: 16px;
+      }
+      .fifth-page .cut-ribbon::after {
+        content: "";
+        position: absolute;
+        border-style: solid;
+      }
+      .fifth-page .cut-ribbon::after {
+        right: -1px;
+        top: -1px;
+        border-width: 28px;
+        border-color: transparent white white transparent;
+      }
+      .fifth-page .tnc-list li {
+        margin-bottom: 2rem;
+        font-size: 16px;
+        line-height: 20px;
+      }
+      .fifth-page .tnc-list li::marker {
+        font-size: 20px;
       }
     </style>
   </head>
@@ -335,10 +362,11 @@
             </tr>
           </tbody>
         </table>
-        <p style="margin-bottom: 3rem; font-size: 16px">
-          <span class="fw-bold" style="font-size: 16px">Note: </span>The project
-          cost mentioned above is exclusive of taxes. An additional 18% GST will
-          be applicable to the final amount.
+        <p style="margin-bottom: 3rem; font-size: 16px; line-height: 20px">
+          <span class="fw-bold" style="font-size: 16px; line-height: 20px"
+            >Note: </span
+          >The project cost mentioned above is exclusive of taxes. An additional
+          18% GST will be applicable to the final amount.
         </p>
         <p
           class="m-0"
@@ -368,6 +396,84 @@
           </tbody>
         </table>
       </div>
+    </div>
+    <div class="fifth-page" style="background-color: #fefff9">
+      <div
+        class="cut-ribbon d-inline-block position-relative"
+        style="background: #0863e7; width: 90%; height: 53px"
+      ></div>
+      <div
+        class="page-content"
+        style="
+          padding-left: 2.5rem;
+          padding-right: 2.5rem;
+          margin-bottom: 11rem;
+        "
+      >
+        <p
+          style="
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-left: 4rem;
+            margin-top: 1.5rem;
+            margin-bottom: 3rem;
+          "
+        >
+          Terms & Conditions
+        </p>
+        <ul class="tnc-list">
+          <li>
+            The paid advance amount is non-refundable unless no action is taken
+            from our end after the payment is made.
+          </li>
+          <li>
+            The scope of work will be defined in the initial agreement or
+            project brief. Any additional features or modifications not outlined
+            in the scope will incur additional costs
+          </li>
+          <li>
+            The estimated project completion timeline is based on the
+            information available at the time of agreement. The total
+            development days are an estimate and may change depending on project
+            complexity and client involvement. Delays caused by the client, such
+            as failure to provide required information or approval, may result
+            in an extension of the project timeline.
+          </li>
+          <li>
+            Upon final payment, the client will receive ownership of the
+            developed app or software, excluding any third-party components or
+            proprietary tools used.
+          </li>
+          <li>
+            Both parties agree to maintain confidentiality concerning each
+            other’s business, data, and any proprietary information shared
+            during the course of the project.
+          </li>
+          <li>
+            The client is responsible for procuring and managing any third-party
+            services required for the project, such as hosting services,
+            software licenses, or APIs.
+          </li>
+          <li>
+            The company provides 30 days of free support after project delivery,
+            covering issues within the developed modules or minor updates
+            related to the original scope of work.
+          </li>
+          <li>
+            If the support required includes major work beyond the original
+            scope, additional charges will apply.
+          </li>
+          <li>
+            After the 30-day free support period, the company offers monthly and
+            annual maintenance plans. Additional charges may apply based on the
+            scope of maintenance required.
+          </li>
+        </ul>
+      </div>
+      <div
+        class="footer-bar w-100"
+        style="height: 85px; background-color: #0863e7"
+      ></div>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
