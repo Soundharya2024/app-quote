@@ -23,6 +23,30 @@
         font-family: Poppins;
         font-size: 13px;
       }
+      @page {
+        size: A4;
+        /* margin-top: 2.5rem; */
+      }
+      @media print {
+        .page-break-after {
+          page-break-after: always; /* Forces new page after this element */
+        }
+        .avoid-break {
+          page-break-inside: avoid;
+        }
+        .third-page table thead {
+          display: table-header-group; /* Ensures the header repeats */
+        }
+      }
+      .page::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 10px; /* Stripe width */
+        height: 100%;
+        background: #0863e7; /* Blue stripe */
+      }
       .first-page
         .cover-page
         .title-container
@@ -41,7 +65,7 @@
       .third-page table td {
         border: 1px solid black;
         padding: 10px;
-        font-size: 1.2rem;
+        font-size: 16px;
       }
       .fourth-page .ribbon::before,
       .ribbon::after {
@@ -98,401 +122,531 @@
     </style>
   </head>
   <body>
-    <div class="first-page" style="background-color: #fefff9">
-      <div class="curved-header w-100 d-flex" style="height: 200px">
-        <img
-          src="./imgs/CurvedHeader.png"
-          alt="Curved Header"
-          class="w-100 h-100 object-fit-stretch"
-        />
-      </div>
-      <div class="cover-page mx-auto" style="width: max-content">
+    <div class="page position-relative">
+      <div class="first-page position-relative avoid-break mt-0">
         <div
-          class="organisation-logo-container d-flex mt-5"
-          style="width: 440px; height: 75px"
+          class="curved-header w-100 d-flex position-absolute top-0 start-0"
+          style="height: 200px"
         >
           <img
-            src="./imgs/LOGO.jpg"
-            alt="ECAPPZ Logo"
-            class="w-100 h-100 object-fit-cover"
+            src="./imgs/CurvedHeader.png"
+            alt="Curved Header"
+            class="w-100 h-100 object-fit-stretch"
           />
         </div>
-        <div class="zoho-container d-flex mt-4 align-items-center">
+        <div
+          class="hero-content mx-auto"
+          style="width: max-content; padding-top: 200px"
+        >
           <div
-            class="zoho-logo-container d-flex"
-            style="width: 172px; height: 73px"
+            class="organisation-logo-container d-flex mt-5"
+            style="width: 440px; height: 75px"
           >
             <img
-              src="./imgs/zoho-logo-512.png"
-              alt="Zoho Logo"
+              src="./imgs/LOGO.jpg"
+              alt="ECAPPZ Logo"
               class="w-100 h-100 object-fit-cover"
             />
           </div>
-          <span class="fw-medium fs-1 ms-2">Official Partner</span>
-        </div>
-        <p class="fs-3 tagline mt-3">
-          Where your digital transformation begins.
-        </p>
-        <div
-          class="title-container"
-          style="margin-top: 6rem; margin-bottom: 9rem"
-        >
-          <div
-            id="app-name-container"
-            class="title-info-container text-center mb-5"
-          >
-            <span class="d-inline-block fw-bold fs-4 text-end">App Name:</span
-            ><span class="d-inline-block fs-4 ms-3 text-start"
-              >Issue Management App</span
+          <div class="zoho-container d-flex mt-4 align-items-center">
+            <div
+              class="zoho-logo-container d-flex"
+              style="width: 172px; height: 73px"
             >
+              <img
+                src="./imgs/zoho-logo-512.png"
+                alt="Zoho Logo"
+                class="w-100 h-100 object-fit-cover"
+              />
+            </div>
+            <span class="fw-medium fs-1 ms-2">Official Partner</span>
           </div>
+          <p class="fs-3 tagline mt-3">
+            Where your digital transformation begins.
+          </p>
           <div
-            id="quote-number-container"
-            class="title-info-container text-center mb-5"
+            class="title-container"
+            style="margin-top: 6rem; margin-bottom: 9rem"
           >
-            <span class="d-inline-block fw-bold fs-4 text-end">Quote No:</span
-            ><span class="d-inline-block fs-4 ms-3 text-start">QT-000013</span>
-          </div>
-          <div
-            id="quote-date-container"
-            class="title-info-container text-center"
-          >
-            <span class="d-inline-block fw-bold fs-4 text-end">Quote Date:</span
-            ><span class="d-inline-block fs-4 ms-3 text-start"
-              >10-Feb-2025</span
+            <div
+              id="app-name-container"
+              class="title-info-container text-center mb-5"
             >
+              <span class="d-inline-block fw-bold fs-4 text-end">App Name:</span
+              ><span class="d-inline-block fs-4 ms-3 text-start"
+                >Issue Management App</span
+              >
+            </div>
+            <div
+              id="quote-number-container"
+              class="title-info-container text-center mb-5"
+            >
+              <span class="d-inline-block fw-bold fs-4 text-end">Quote No:</span
+              ><span class="d-inline-block fs-4 ms-3 text-start"
+                >QT-000013</span
+              >
+            </div>
+            <div
+              id="quote-date-container"
+              class="title-info-container text-center"
+            >
+              <span class="d-inline-block fw-bold fs-4 text-end"
+                >Quote Date:</span
+              ><span class="d-inline-block fs-4 ms-3 text-start"
+                >10-Feb-2025</span
+              >
+            </div>
           </div>
         </div>
-      </div>
-      <div class="curved-footer w-100 d-flex" style="height: 200px">
-        <img
-          src="./imgs/CurvedFooter.png"
-          alt="Curved Footer"
-          class="w-100 h-100 object-fit-stretch"
-        />
-      </div>
-    </div>
-    <div
-      class="second-page pb-0 overflow-hidden"
-      style="background-color: #0863e7; padding-left: 6rem; padding-right: 6rem"
-    >
-      <div
-        class="d-flex align-items-center justify-content-center gap-3 mb-5"
-        style="margin-top: 9.5rem"
-      >
-        <div class="image-container d-flex" style="width: 341px; height: 319px">
+        <div class="curved-footer w-100 d-flex" style="height: 200px">
           <img
-            src="./imgs/WeAreECappz.png"
-            alt="We are ECappz"
-            class="w-100 h-100 object-fit-cover"
+            src="./imgs/CurvedFooter.png"
+            alt="Curved Footer"
+            class="w-100 h-100 object-fit-stretch"
           />
         </div>
-        <h1 class="text-white" style="font-size: 4rem; font-weight: 900">
-          We<br />Are<br />ECAPPZ
-        </h1>
       </div>
-      <p
-        class="text-white fs-5 lh-base text-center"
-        style="margin-bottom: 9.1rem"
+      <div
+        class="second-page pb-0 overflow-hidden avoid-break mt-0"
+        style="
+          background-color: #0863e7;
+          padding-left: 6rem;
+          padding-right: 6rem;
+        "
       >
-        We specialize in developing custom software solutions tailored to meet
-        your business needs. Whether it's mobile apps, web apps, or complex
-        enterprise solutions, we harness the power of Zoho products to bring
-        your ideas to life. Our expertise also extends to building applications
-        from scratch, ensuring a perfect fit for your unique requirements.
-      </p>
-      <div class="position-relative d-flex justify-content-end">
-        <div class="d-flex justify-content-end z-1">
+        <div
+          class="d-flex align-items-center justify-content-center gap-3 mb-5"
+          style="margin-top: 9.5rem"
+        >
           <div
-            class="plant-container d-flex"
-            style="width: 217px; height: 277px"
+            class="image-container d-flex"
+            style="width: 341px; height: 319px"
           >
             <img
-              src="./imgs/PottedPlant.png"
-              alt="Potted Plant"
+              src="./imgs/WeAreECappz.png"
+              alt="We are ECappz"
+              class="w-100 h-100 object-fit-cover"
+            />
+          </div>
+          <h1 class="text-white" style="font-size: 4rem; font-weight: 900">
+            We<br />Are<br />ECAPPZ
+          </h1>
+        </div>
+        <p
+          class="text-white fs-5 lh-base text-center"
+          style="margin-bottom: 9.1rem"
+        >
+          We specialize in developing custom software solutions tailored to meet
+          your business needs. Whether it's mobile apps, web apps, or complex
+          enterprise solutions, we harness the power of Zoho products to bring
+          your ideas to life. Our expertise also extends to building
+          applications from scratch, ensuring a perfect fit for your unique
+          requirements.
+        </p>
+        <div class="position-relative d-flex justify-content-end">
+          <div class="d-flex justify-content-end z-1">
+            <div
+              class="plant-container d-flex"
+              style="width: 217px; height: 277px"
+            >
+              <img
+                src="./imgs/PottedPlant.png"
+                alt="Potted Plant"
+                class="w-100 h-100 object-fit-cover"
+              />
+            </div>
+          </div>
+          <div
+            class="position-absolute bg-design-container d-flex"
+            style="width: 323px; height: 315px; top: 25%; left: 87%"
+          >
+            <img
+              src="./imgs/BgDesign.png"
+              alt="Plant Bg Design"
               class="w-100 h-100 object-fit-cover"
             />
           </div>
         </div>
+      </div>
+      <div class="third-page d-flex">
         <div
-          class="position-absolute bg-design-container d-flex"
-          style="width: 323px; height: 315px; top: 25%; left: 87%"
+          class="page-content"
+          style="margin-bottom: 2.5rem; margin-left: 5rem; margin-right: 5rem"
         >
-          <img
-            src="./imgs/BgDesign.png"
-            alt="Plant Bg Design"
-            class="w-100 h-100 object-fit-cover"
-          />
+          <div class="d-flex align-items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              fill="currentColor"
+              class="bi bi-arrow-right"
+              viewBox="0 0 16 16"
+              stroke="#5300fe"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
+              />
+            </svg>
+            <span
+              class="text-uppercase fs-5 fw-bold ms-3"
+              style="color: #2158a2"
+              >Project Timeline</span
+            >
+          </div>
+          <p
+            class="text-uppercase mt-2"
+            style="font-size: 4rem; font-weight: 800"
+          >
+            Timeline and Milestones
+          </p>
+          <table class="text-center" style="margin: 4rem auto; width: 90%">
+            <thead style="background-color: #0963e6; color: #ffffff">
+              <tr>
+                <th class="fw-normal">S.No</th>
+                <th class="fw-normal">Task Name</th>
+                <th class="fw-normal">Days</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>
+                  Testing Longer named Task - Quisque eleifend purus non lacus
+                  posuere feugiat. Sed et pharetra elit.
+                </td>
+                <td rowspan="2">3</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>
+                  Testing Longer named Task - Quisque eleifend purus non lacus
+                  posuere feugiat. Sed et pharetra elit.
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>
+                  Testing Longer named Task - Quisque eleifend purus non lacus
+                  posuere feugiat. Sed et pharetra elit.
+                </td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>
+                  Testing Longer named Task - Quisque eleifend purus non lacus
+                  posuere feugiat. Sed et pharetra elit.
+                </td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>
+                  Testing Longer named Task - Quisque eleifend purus non lacus
+                  posuere feugiat. Sed et pharetra elit.
+                </td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>
+                  Testing Longer named Task - Quisque eleifend purus non lacus
+                  posuere feugiat. Sed et pharetra elit.
+                </td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>
+                  Testing Longer named Task - Quisque eleifend purus non lacus
+                  posuere feugiat. Sed et pharetra elit.
+                </td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>
+                  Testing Longer named Task - Quisque eleifend purus non lacus
+                  posuere feugiat. Sed et pharetra elit.
+                </td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>
+                  Testing Longer named Task - Quisque eleifend purus non lacus
+                  posuere feugiat. Sed et pharetra elit.
+                </td>
+                <td>1</td>
+              </tr>
+              <tr class="page-break-after" style="margin-top: 4rem">
+                <td>10</td>
+                <td>
+                  Testing Longer named Task - Quisque eleifend purus non lacus
+                  posuere feugiat. Sed et pharetra elit.
+                </td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td>
+                  Testing Longer named Task - Quisque eleifend purus non lacus
+                  posuere feugiat. Sed et pharetra elit.
+                </td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>
+                  Testing Longer named Task - Quisque eleifend purus non lacus
+                  posuere feugiat. Sed et pharetra elit. Quisque vitae augue
+                  arcu. Cras tristique neque nec massa.
+                </td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td>Testing Task</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td>
+                  Testing Task - Quisque eleifend purus non lacus posuere.
+                </td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td>
+                  Testing Longer named Task - Quisque eleifend purus non lacus
+                  posuere feugiat. Sed et pharetra elit.
+                </td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>16</td>
+                <td>
+                  Testing Longer named Task - Quisque eleifend purus non lacus
+                  posuere feugiat. Sed et pharetra elit. Quisque vitae augue
+                  arcu.
+                </td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>17</td>
+                <td>
+                  Testing Longer named Task - Quisque eleifend purus non lacus
+                  posuere feugiat. Sed et pharetra elit.
+                </td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>18</td>
+                <td>
+                  Testing Task - Quisque eleifend purus non lacus posuere.
+                </td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>19</td>
+                <td>
+                  Testing Task - Quisque eleifend purus non lacus posuere.
+                </td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>20</td>
+                <td>
+                  Testing Task - Quisque eleifend purus non lacus posuere.
+                </td>
+                <td>1</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-    </div>
-    <div
-      class="third-page pt-5 pb-5"
-      style="padding-left: 6rem; padding-right: 6rem; background-color: #fefff9"
-    >
-      <div class="d-flex align-items-center">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="25"
-          height="25"
-          fill="currentColor"
-          class="bi bi-arrow-right"
-          viewBox="0 0 16 16"
-          stroke="#5300fe"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
-          />
-        </svg>
-        <span class="text-uppercase fs-5 fw-bold ms-3" style="color: #2158a2"
-          >Project Timeline</span
-        >
-      </div>
-      <p class="text-uppercase mt-2" style="font-size: 4rem; font-weight: 800">
-        Timeline and Milestones
-      </p>
-      <table
-        class="text-center"
-        style="width: 500px; margin: 5rem auto 17.5rem auto"
-      >
-        <thead style="background-color: #0963e6; color: #ffffff">
-          <tr>
-            <th class="fw-normal">S.No</th>
-            <th class="fw-normal">Task Name</th>
-            <th class="fw-normal">Days</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Whapi Zoho Creator API Setup</td>
-            <td rowspan="2">3</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Backend forms and Reports</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Issue Management and Dashboard UI</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>WhatsApp Group Configuration</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>Post complaints to Zoho Creator from WhatsApp</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>Complaint Follow up</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>Issue Management Admin Controls</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>WhatsApp Notifications</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>Testing</td>
-            <td>1</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div
-      class="fourth-page"
-      style="
-        padding-top: 2.5rem;
-        padding-bottom: 11rem;
-        background-color: #fefff9;
-      "
-    >
-      <div
-        class="ribbon page-title-container d-inline-flex position-relative w-100 overflow-hidden justify-content-center align-items-center"
-        style="background: #0863e7; height: 55px"
-      >
-        <span
-          class="d-inline-block text-white"
-          style="font-weight: 900; font-size: 2rem; letter-spacing: 1px"
-        >
-          Cost and Payment Terms
-        </span>
-      </div>
-      <div class="page-content" style="padding-left: 5rem; padding-right: 5rem">
-        <p
-          class="text-uppercase text-center mt-5 mb-3 fw-medium"
-          style="font-size: 1.15rem; letter-spacing: 1px"
-        >
-          No of estimated business days required to complete <br />
-          the project
-        </p>
-        <p
-          class="text-center"
-          style="
-            font-size: 4rem;
-            color: #004aad;
-            text-shadow: -2px -2px 4px #004aad20;
-          "
-        >
-          19
-        </p>
-        <p
-          class="m-0"
-          style="font-size: 1.3rem; font-weight: 800; letter-spacing: 1px"
-        >
-          Project Budget
-        </p>
-        <table class="w-100 text-center my-4">
-          <thead style="background-color: #0863e7; color: #ffffff">
-            <tr>
-              <th class="fw-normal">Description</th>
-              <th class="fw-normal">Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Total Development Cost</td>
-              <td>
-                <i class="bi bi-currency-rupee" style="font-size: 16px"></i>
-                30800
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <p style="margin-bottom: 3rem; font-size: 16px; line-height: 20px">
-          <span class="fw-bold" style="font-size: 16px; line-height: 20px"
-            >Note: </span
-          >The project cost mentioned above is exclusive of taxes. An additional
-          18% GST will be applicable to the final amount.
-        </p>
-        <p
-          class="m-0"
-          style="font-size: 1.4rem; font-weight: 800; letter-spacing: 1px"
-        >
-          Payment Term
-        </p>
-        <table class="w-100 text-center mt-4" style="margin-bottom: 7.8rem">
-          <thead style="background-color: #cdd6ff">
-            <tr>
-              <th>Payment Phase</th>
-              <th>Payment Amount</th>
-              <th>Due Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Advance Payment</td>
-              <td>50% of Total Amount</td>
-              <td>Due at Project Start</td>
-            </tr>
-            <tr>
-              <td>Final Payment</td>
-              <td>50% of Total Amount</td>
-              <td>Due upon Project Delivery</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="fifth-page" style="background-color: #fefff9">
-      <div
-        class="cut-ribbon d-inline-block position-relative"
-        style="background: #0863e7; width: 90%; height: 53px"
-      ></div>
-      <div
-        class="page-content"
-        style="padding-left: 3rem; padding-right: 3rem; margin-bottom: 7rem"
-      >
-        <p
-          style="
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin-left: 4rem;
-            margin-top: 1.5rem;
-            margin-bottom: 3rem;
-          "
-        >
-          Terms & Conditions
-        </p>
-        <ul
-          class="tnc-list position-relative"
-          style="list-style: none !important"
-        >
-          <li>
-            The paid advance amount is non-refundable unless no action is taken
-            from our end after the payment is made.
-          </li>
-          <li>
-            The scope of work will be defined in the initial agreement or
-            project brief. Any additional features or modifications not outlined
-            in the scope will incur additional costs
-          </li>
-          <li>
-            The estimated project completion timeline is based on the
-            information available at the time of agreement. The total
-            development days are an estimate and may change depending on project
-            complexity and client involvement. Delays caused by the client, such
-            as failure to provide required information or approval, may result
-            in an extension of the project timeline.
-          </li>
-          <li>
-            Upon final payment, the client will receive ownership of the
-            developed app or software, excluding any third-party components or
-            proprietary tools used.
-          </li>
-          <li>
-            Both parties agree to maintain confidentiality concerning each
-            other’s business, data, and any proprietary information shared
-            during the course of the project.
-          </li>
-          <li>
-            The client is responsible for procuring and managing any third-party
-            services required for the project, such as hosting services,
-            software licenses, or APIs.
-          </li>
-          <li>
-            The company provides 30 days of free support after project delivery,
-            covering issues within the developed modules or minor updates
-            related to the original scope of work.
-          </li>
-          <li>
-            If the support required includes major work beyond the original
-            scope, additional charges will apply.
-          </li>
-          <li>
-            After the 30-day free support period, the company offers monthly and
-            annual maintenance plans. Additional charges may apply based on the
-            scope of maintenance required.
-          </li>
-        </ul>
-      </div>
-      <div
-        class="footer-bar w-100"
-        style="height: 85px; background-color: #0863e7"
-      ></div>
-    </div>
-    <div
-      class="sixth-page pe-5 position-relative"
-      style="background-color: #fefff9"
-    >
-      <div class="contact-us-container d-flex gap-5">
+      <div class="fourth-page position-relative avoid-break mt-0">
+        <div class="position-absolute top-0 start-0 w-100">
+          <div
+            class="ribbon page-title-container d-inline-flex position-relative w-100 overflow-hidden justify-content-center align-items-center"
+            style="background: #0863e7; height: 55px"
+          >
+            <span
+              class="d-inline-block text-white"
+              style="font-weight: 900; font-size: 2rem; letter-spacing: 1px"
+            >
+              Cost and Payment Terms
+            </span>
+          </div>
+        </div>
         <div
-          class="decorative-side-bar"
-          style="width: 10px; height: 297mm; background-color: #0863e7"
+          class="page-content"
+          style="padding-left: 5rem; padding-right: 5rem; padding-top: 55px"
+        >
+          <p
+            class="text-uppercase text-center mt-5 mb-3 fw-medium"
+            style="font-size: 1.15rem; letter-spacing: 1px"
+          >
+            No of estimated business days required to complete <br />
+            the project
+          </p>
+          <p
+            class="text-center"
+            style="
+              font-size: 4rem;
+              color: #004aad;
+              text-shadow: -2px -2px 4px #004aad20;
+            "
+          >
+            19
+          </p>
+          <p
+            class="m-0"
+            style="font-size: 1.3rem; font-weight: 800; letter-spacing: 1px"
+          >
+            Project Budget
+          </p>
+          <table class="w-100 text-center my-4">
+            <thead style="background-color: #0863e7; color: #ffffff">
+              <tr>
+                <th class="fw-normal">Description</th>
+                <th class="fw-normal">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Total Development Cost</td>
+                <td>
+                  <i class="bi bi-currency-rupee" style="font-size: 16px"></i>
+                  30800
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-bottom: 3rem; font-size: 16px; line-height: 20px">
+            <span class="fw-bold" style="font-size: 16px; line-height: 20px"
+              >Note: </span
+            >The project cost mentioned above is exclusive of taxes. An
+            additional 18% GST will be applicable to the final amount.
+          </p>
+          <p
+            class="m-0"
+            style="font-size: 1.4rem; font-weight: 800; letter-spacing: 1px"
+          >
+            Payment Term
+          </p>
+          <table class="w-100 text-center mt-4" style="margin-bottom: 7.8rem">
+            <thead style="background-color: #cdd6ff">
+              <tr>
+                <th>Payment Phase</th>
+                <th>Payment Amount</th>
+                <th>Due Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Advance Payment</td>
+                <td>50% of Total Amount</td>
+                <td>Due at Project Start</td>
+              </tr>
+              <tr>
+                <td>Final Payment</td>
+                <td>50% of Total Amount</td>
+                <td>Due upon Project Delivery</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div
+        class="fifth-page position-relative d-flex flex-column avoid-break mt-0"
+        style="height: 297mm"
+      >
+        <div class="position-absolute top-0 start-0" style="width: 90%">
+          <div
+            class="cut-ribbon d-inline-block position-relative"
+            style="background: #0863e7; width: 90%; height: 53px"
+          ></div>
+        </div>
+        <div
+          class="page-content"
+          style="width: 85%; margin: 0 auto; padding-top: 53px"
+        >
+          <p
+            style="
+              font-size: 3.5rem;
+              font-weight: 900;
+              margin-left: 4rem;
+              margin-top: 1.5rem;
+              margin-bottom: 3rem;
+            "
+          >
+            Terms & Conditions
+          </p>
+          <ul
+            class="tnc-list position-relative"
+            style="list-style: none !important"
+          >
+            <li>
+              The paid advance amount is non-refundable unless no action is
+              taken from our end after the payment is made.
+            </li>
+            <li>
+              The scope of work will be defined in the initial agreement or
+              project brief. Any additional features or modifications not
+              outlined in the scope will incur additional costs
+            </li>
+            <li>
+              The estimated project completion timeline is based on the
+              information available at the time of agreement. The total
+              development days are an estimate and may change depending on
+              project complexity and client involvement. Delays caused by the
+              client, such as failure to provide required information or
+              approval, may result in an extension of the project timeline.
+            </li>
+            <li>
+              Upon final payment, the client will receive ownership of the
+              developed app or software, excluding any third-party components or
+              proprietary tools used.
+            </li>
+            <li>
+              Both parties agree to maintain confidentiality concerning each
+              other’s business, data, and any proprietary information shared
+              during the course of the project.
+            </li>
+            <li>
+              The client is responsible for procuring and managing any
+              third-party services required for the project, such as hosting
+              services, software licenses, or APIs.
+            </li>
+            <li>
+              The company provides 30 days of free support after project
+              delivery, covering issues within the developed modules or minor
+              updates related to the original scope of work.
+            </li>
+            <li>
+              If the support required includes major work beyond the original
+              scope, additional charges will apply.
+            </li>
+            <li>
+              After the 30-day free support period, the company offers monthly
+              and annual maintenance plans. Additional charges may apply based
+              on the scope of maintenance required.
+            </li>
+          </ul>
+        </div>
+        <div
+          class="footer-bar w-100"
+          style="height: 85px; background-color: #0863e7; margin-top: auto"
         ></div>
-        <div class="page-content w-100">
+      </div>
+      <div
+        class="sixth-page pe-5 position-relative avoid-break mt-0"
+        style="height: 297mm"
+      >
+        <div class="page-content" style="width: 80%; margin: 0 auto">
           <div
             class="contact-us-img-container d-flex mt-4"
             style="width: 366.8px; height: 272.8px"
@@ -583,32 +737,32 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="d-flex flex-column position-absolute top-0 end-0">
-        <div
-          class="organisation-logo-container d-flex mt-5"
-          style="width: 210px; height: 37.5px"
-        >
-          <img
-            src="./imgs/LOGO.jpg"
-            alt="ECAPPZ Logo"
-            class="w-100 h-100 object-fit-cover"
-          />
-        </div>
-        <div
-          class="zoho-container d-flex justify-content-center align-items-center mt-2"
-        >
+        <div class="d-flex flex-column position-absolute top-0 end-0">
           <div
-            class="zoho-logo-container d-flex"
-            style="width: 77px; height: 32.6px"
+            class="organisation-logo-container d-flex mt-5"
+            style="width: 210px; height: 37.5px"
           >
             <img
-              src="./imgs/zoho-logo-512.png"
-              alt="Zoho Logo"
+              src="./imgs/LOGO.jpg"
+              alt="ECAPPZ Logo"
               class="w-100 h-100 object-fit-cover"
             />
           </div>
-          <span class="fs-6 ms-2">Official Partner</span>
+          <div
+            class="zoho-container d-flex justify-content-center align-items-center mt-2"
+          >
+            <div
+              class="zoho-logo-container d-flex"
+              style="width: 77px; height: 32.6px"
+            >
+              <img
+                src="./imgs/zoho-logo-512.png"
+                alt="Zoho Logo"
+                class="w-100 h-100 object-fit-cover"
+              />
+            </div>
+            <span class="fs-6 ms-2">Official Partner</span>
+          </div>
         </div>
       </div>
     </div>
