@@ -20,12 +20,8 @@
     />
     <style>
       * {
-        font-family: Poppins;
+        font-family: "Poppins";
         font-size: 13px;
-      }
-      @page {
-        size: A4;
-        /* margin-top: 2.5rem; */
       }
       @media print {
         .page-break-after {
@@ -38,7 +34,7 @@
           display: table-header-group; /* Ensures the header repeats */
         }
       }
-      .page::before {
+      .pages-container::before {
         content: "";
         position: absolute;
         left: 0;
@@ -48,14 +44,14 @@
         background: #0863e7; /* Blue stripe */
       }
       .first-page
-        .cover-page
+        .hero-content
         .title-container
         .title-info-container
         span:first-child {
         width: 150px;
       }
       .first-page
-        .cover-page
+        .hero-content
         .title-container
         .title-info-container
         span:last-child {
@@ -104,12 +100,11 @@
       }
       .fifth-page .tnc-list li {
         margin-bottom: 1rem;
-        font-family: Poppins;
+        font-family: "Poppins";
         font-size: 16px;
         line-height: 25px;
-        font-weight: normal;
-        letter-spacing: 0.1px;
-        text-align: justify !important;
+        font-weight: 400;
+        text-align: justify;
       }
       .fifth-page .tnc-list li::before {
         content: "●"; /* Custom bullet */
@@ -122,8 +117,8 @@
     </style>
   </head>
   <body>
-    <div class="page position-relative">
-      <div class="first-page position-relative avoid-break mt-0">
+    <div class="pages-container position-relative w-100">
+      <div id="page" class="first-page position-relative avoid-break">
         <div
           class="curved-header w-100 d-flex position-absolute top-0 start-0"
           style="height: 200px"
@@ -148,7 +143,9 @@
               class="w-100 h-100 object-fit-cover"
             />
           </div>
-          <div class="zoho-container d-flex mt-4 align-items-center">
+          <div
+            class="zoho-container d-flex mt-4 align-items-center justify-content-center"
+          >
             <div
               class="zoho-logo-container d-flex"
               style="width: 172px; height: 73px"
@@ -159,9 +156,9 @@
                 class="w-100 h-100 object-fit-cover"
               />
             </div>
-            <span class="fw-medium fs-1 ms-2">Official Partner</span>
+            <span class="fw-medium fs-2 ms-2">Official Partner</span>
           </div>
-          <p class="fs-3 tagline mt-3">
+          <p class="tagline text-center mt-3" style="font-size: 16px">
             Where your digital transformation begins.
           </p>
           <div
@@ -172,8 +169,13 @@
               id="app-name-container"
               class="title-info-container text-center mb-5"
             >
-              <span class="d-inline-block fw-bold fs-4 text-end">App Name:</span
-              ><span class="d-inline-block fs-4 ms-3 text-start"
+              <span
+                class="d-inline-block fw-bold text-end"
+                style="font-size: 16px"
+                >App Name:</span
+              ><span
+                class="d-inline-block ms-3 text-start"
+                style="font-size: 16px"
                 >Issue Management App</span
               >
             </div>
@@ -181,8 +183,13 @@
               id="quote-number-container"
               class="title-info-container text-center mb-5"
             >
-              <span class="d-inline-block fw-bold fs-4 text-end">Quote No:</span
-              ><span class="d-inline-block fs-4 ms-3 text-start"
+              <span
+                class="d-inline-block fw-bold text-end"
+                style="font-size: 16px"
+                >Quote No:</span
+              ><span
+                class="d-inline-block ms-3 text-start"
+                style="font-size: 16px"
                 >QT-000013</span
               >
             </div>
@@ -190,9 +197,13 @@
               id="quote-date-container"
               class="title-info-container text-center"
             >
-              <span class="d-inline-block fw-bold fs-4 text-end"
+              <span
+                class="d-inline-block fw-bold text-end"
+                style="font-size: 16px"
                 >Quote Date:</span
-              ><span class="d-inline-block fs-4 ms-3 text-start"
+              ><span
+                class="d-inline-block ms-3 text-start"
+                style="font-size: 16px"
                 >10-Feb-2025</span
               >
             </div>
@@ -207,16 +218,17 @@
         </div>
       </div>
       <div
-        class="second-page pb-0 overflow-hidden avoid-break mt-0"
+        id="page"
+        class="second-page cover-page w-100 pb-0 avoid-break mt-0"
         style="
           background-color: #0863e7;
           padding-left: 6rem;
           padding-right: 6rem;
+          padding-top: 9.5rem;
         "
       >
         <div
           class="d-flex align-items-center justify-content-center gap-3 mb-5"
-          style="margin-top: 9.5rem"
         >
           <div
             class="image-container d-flex"
@@ -228,14 +240,11 @@
               class="w-100 h-100 object-fit-cover"
             />
           </div>
-          <h1 class="text-white" style="font-size: 4rem; font-weight: 900">
+          <h1 class="text-white" style="font-size: 3rem; font-weight: 900">
             We<br />Are<br />ECAPPZ
           </h1>
         </div>
-        <p
-          class="text-white fs-5 lh-base text-center"
-          style="margin-bottom: 9.1rem"
-        >
+        <p class="text-white lh-base text-center" style="font-size: 16px">
           We specialize in developing custom software solutions tailored to meet
           your business needs. Whether it's mobile apps, web apps, or complex
           enterprise solutions, we harness the power of Zoho products to bring
@@ -243,7 +252,10 @@
           applications from scratch, ensuring a perfect fit for your unique
           requirements.
         </p>
-        <div class="position-relative d-flex justify-content-end">
+        <div
+          class="position-relative d-flex justify-content-end overflow-hidden"
+          style="margin-top: 12.9rem"
+        >
           <div class="d-flex justify-content-end z-1">
             <div
               class="plant-container d-flex"
@@ -268,10 +280,15 @@
           </div>
         </div>
       </div>
-      <div class="third-page d-flex">
+      <div id="page" class="third-page d-flex">
         <div
           class="page-content"
-          style="margin-bottom: 2.5rem; margin-left: 5rem; margin-right: 5rem"
+          style="
+            margin-bottom: 2.5rem;
+            margin-left: 5rem;
+            margin-right: 5rem;
+            margin-top: 2.5rem;
+          "
         >
           <div class="d-flex align-items-center">
             <svg
@@ -296,7 +313,7 @@
           </div>
           <p
             class="text-uppercase mt-2"
-            style="font-size: 4rem; font-weight: 800"
+            style="font-size: 3rem; font-weight: 800"
           >
             Timeline and Milestones
           </p>
@@ -380,7 +397,7 @@
                 </td>
                 <td>1</td>
               </tr>
-              <tr class="page-break-after" style="margin-top: 4rem">
+              <tr class="page-break-after">
                 <td>10</td>
                 <td>
                   Testing Longer named Task - Quisque eleifend purus non lacus
@@ -467,10 +484,10 @@
           </table>
         </div>
       </div>
-      <div class="fourth-page position-relative avoid-break mt-0">
+      <div id="page" class="fourth-page position-relative avoid-break">
         <div class="position-absolute top-0 start-0 w-100">
           <div
-            class="ribbon page-title-container d-inline-flex position-relative w-100 overflow-hidden justify-content-center align-items-center"
+            class="ribbon page-title-container d-inline-flex position-relative w-100 justify-content-center align-items-center"
             style="background: #0863e7; height: 55px"
           >
             <span
@@ -561,6 +578,7 @@
         </div>
       </div>
       <div
+        id="page"
         class="fifth-page position-relative d-flex flex-column avoid-break mt-0"
         style="height: 297mm"
       >
@@ -576,7 +594,7 @@
         >
           <p
             style="
-              font-size: 3.5rem;
+              font-size: 3rem;
               font-weight: 900;
               margin-left: 4rem;
               margin-top: 1.5rem;
@@ -643,6 +661,7 @@
         ></div>
       </div>
       <div
+        id="page"
         class="sixth-page pe-5 position-relative avoid-break mt-0"
         style="height: 297mm"
       >
@@ -659,59 +678,62 @@
           </div>
           <h2
             class="my-5"
-            style="color: #1a2d57; font-size: 3.5rem; font-weight: 900"
+            style="color: #1a2d57; font-size: 3rem; font-weight: 900"
           >
             Contact Us
           </h2>
           <div class="contact-us-details d-flex flex-column">
             <div
               class="d-flex align-items-center border-bottom py-3"
-              style="border-bottom-color: #9a9a9a !important; gap: 4rem"
+              style="border-bottom-color: #9a9a9a !important; gap: 10rem"
             >
               <div class="d-flex gap-2 w-25 align-items-center">
                 <i
                   class="bi bi-globe-central-south-asia d-inline-flex border rounded-circle justify-content-center align-items-center px-2 py-2"
                   style="color: #0a5fe9; border-color: #9a9a9a !important"
                 ></i>
-                <span class="fs-5" style="color: #1a2d57; font-weight: 800"
+                <span style="color: #1a2d57; font-size: 18px; font-weight: 900"
                   >Website</span
                 >
               </div>
-              <a href="https://www.ecappz.in" class="fs-5 text-black"
+              <a
+                href="https://www.ecappz.in"
+                class="text-black"
+                style="font-size: 16px"
                 >www.ecappz.in</a
               >
             </div>
             <div
               class="d-flex align-items-center border-bottom py-3"
-              style="border-bottom-color: #9a9a9a !important; gap: 4rem"
+              style="border-bottom-color: #9a9a9a !important; gap: 10rem"
             >
               <div class="d-flex gap-2 w-25 align-items-center">
                 <i
                   class="bi bi-telephone d-inline-flex border rounded-circle justify-content-center align-items-center px-2 py-2"
                   style="color: #0a5fe9; border-color: #9a9a9a !important"
                 ></i>
-                <span class="fs-5" style="color: #1a2d57; font-weight: 800"
+                <span style="color: #1a2d57; font-size: 18px; font-weight: 900"
                   >Phone</span
                 >
               </div>
-              <span class="fs-5">+91 93440 81058</span>
+              <span style="font-size: 16px">+91 93440 81058</span>
             </div>
             <div
               class="d-flex align-items-center border-bottom py-3"
-              style="border-bottom-color: #9a9a9a !important; gap: 4rem"
+              style="border-bottom-color: #9a9a9a !important; gap: 10rem"
             >
               <div class="d-flex gap-2 w-25 align-items-center">
                 <i
                   class="bi bi-envelope d-inline-flex border rounded-circle justify-content-center align-items-center px-2 py-2"
                   style="color: #0a5fe9; border-color: #9a9a9a !important"
                 ></i>
-                <span class="fs-5" style="color: #1a2d57; font-weight: 800"
+                <span style="color: #1a2d57; font-size: 18px; font-weight: 900"
                   >E-mail</span
                 >
               </div>
-              <span class="fs-5">sales@ecappz.in</span>
+              <span style="font-size: 16px">sales@ecappz.in</span>
             </div>
-            <div class="d-flex align-items-center py-3" style="gap: 4rem">
+            <div class="d-flex align-items-center py-3" style="gap: 10rem">
               <div
                 class="d-flex gap-2 w-25 align-items-center align-self-start"
               >
@@ -719,19 +741,23 @@
                   class="bi bi-geo-alt d-inline-flex border rounded-circle justify-content-center align-items-center px-2 py-2"
                   style="color: #0a5fe9; border-color: #9a9a9a !important"
                 ></i>
-                <span class="fs-5" style="color: #1a2d57; font-weight: 800"
+                <span style="color: #1a2d57; font-size: 18px; font-weight: 900"
                   >Address</span
                 >
               </div>
-              <p class="lh-base fs-5">
-                <span class="text-uppercase fw-bold fs-5"
+              <p class="lh-lg" style="font-size: 16px">
+                <span class="text-uppercase fw-bold" style="font-size: 16px"
                   >ECAPPZ TECHNOLOGY PVT LTD<br
                 /></span>
                 G2, Mp Vrindha, Thirumalai Nagar,<br />Mananchery, Kundrathur,
                 Kanchipuram<br />Tamilnadu, India<br />PinCode: 600069<br />
-                <span class="text-uppercase fw-bold fs-5">CIN:</span>
+                <span class="text-uppercase fw-bold" style="font-size: 16px"
+                  >CIN:</span
+                >
                 U62099TN2024PTC170399<br />
-                <span class="text-uppercase fw-bold fs-5">GST:</span>
+                <span class="text-uppercase fw-bold" style="font-size: 16px"
+                  >GST:</span
+                >
                 33AAICE1995P1Z0
               </p>
             </div>
