@@ -33,8 +33,11 @@
         .third-page table thead {
           display: table-header-group; /* Ensures the header repeats */
         }
+        .print-spacer th {
+          height: 2.5rem; /* Adjust this value as needed */
+        }
       }
-      .pages-container::before {
+      .sidebar-design-container::before {
         content: "";
         position: absolute;
         left: 0;
@@ -87,21 +90,10 @@
         padding: 20px;
         font-size: 16px;
       }
-      .fifth-page .cut-ribbon::after {
-        content: "";
-        position: absolute;
-        border-style: solid;
-      }
-      .fifth-page .cut-ribbon::after {
-        right: -1px;
-        top: -1px;
-        border-width: 28px;
-        border-color: transparent white white transparent;
-      }
       .fifth-page .tnc-list li {
         margin-bottom: 1rem;
         font-family: "Poppins";
-        font-size: 16px;
+        font-size: 14px;
         line-height: 25px;
         font-weight: 400;
         text-align: justify;
@@ -117,177 +109,171 @@
     </style>
   </head>
   <body>
-    <div class="pages-container position-relative w-100">
-      <div id="page" class="first-page position-relative avoid-break">
-        <div
-          class="curved-header w-100 d-flex position-absolute top-0 start-0"
-          style="height: 200px"
-        >
-          <img
-            src="./imgs/CurvedHeader.png"
-            alt="Curved Header"
-            class="w-100 h-100 object-fit-stretch"
-          />
-        </div>
-        <div
-          class="hero-content mx-auto"
-          style="width: max-content; padding-top: 200px"
-        >
-          <div
-            class="organisation-logo-container d-flex mt-5"
-            style="width: 440px; height: 75px"
-          >
-            <img
-              src="./imgs/LOGO.jpg"
-              alt="ECAPPZ Logo"
-              class="w-100 h-100 object-fit-cover"
-            />
-          </div>
-          <div
-            class="zoho-container d-flex mt-4 align-items-center justify-content-center"
-          >
-            <div
-              class="zoho-logo-container d-flex"
-              style="width: 172px; height: 73px"
-            >
-              <img
-                src="./imgs/zoho-logo-512.png"
-                alt="Zoho Logo"
-                class="w-100 h-100 object-fit-cover"
-              />
-            </div>
-            <span class="fw-medium fs-2 ms-2">Official Partner</span>
-          </div>
-          <p class="tagline text-center mt-3" style="font-size: 16px">
-            Where your digital transformation begins.
-          </p>
-          <div
-            class="title-container"
-            style="margin-top: 6rem; margin-bottom: 9rem"
-          >
-            <div
-              id="app-name-container"
-              class="title-info-container text-center mb-5"
-            >
-              <span
-                class="d-inline-block fw-bold text-end"
-                style="font-size: 16px"
-                >App Name:</span
-              ><span
-                class="d-inline-block ms-3 text-start"
-                style="font-size: 16px"
-                >Issue Management App</span
-              >
-            </div>
-            <div
-              id="quote-number-container"
-              class="title-info-container text-center mb-5"
-            >
-              <span
-                class="d-inline-block fw-bold text-end"
-                style="font-size: 16px"
-                >Quote No:</span
-              ><span
-                class="d-inline-block ms-3 text-start"
-                style="font-size: 16px"
-                >QT-000013</span
-              >
-            </div>
-            <div
-              id="quote-date-container"
-              class="title-info-container text-center"
-            >
-              <span
-                class="d-inline-block fw-bold text-end"
-                style="font-size: 16px"
-                >Quote Date:</span
-              ><span
-                class="d-inline-block ms-3 text-start"
-                style="font-size: 16px"
-                >10-Feb-2025</span
-              >
-            </div>
-          </div>
-        </div>
-        <div class="curved-footer w-100 d-flex" style="height: 200px">
-          <img
-            src="./imgs/CurvedFooter.png"
-            alt="Curved Footer"
-            class="w-100 h-100 object-fit-stretch"
-          />
-        </div>
+    <div id="front-page" class="first-page position-relative avoid-break">
+      <div
+        class="curved-header w-100 d-flex position-absolute top-0 start-0"
+        style="height: 200px"
+      >
+        <img
+          src="./imgs/CurvedHeader.png"
+          alt="Curved Header"
+          class="w-100 h-100 object-fit-stretch"
+        />
       </div>
       <div
-        id="page"
-        class="second-page cover-page w-100 pb-0 avoid-break mt-0"
-        style="
-          background-color: #0863e7;
-          padding-left: 6rem;
-          padding-right: 6rem;
-          padding-top: 9.5rem;
-        "
+        class="hero-content mx-auto"
+        style="width: max-content; padding-top: 200px"
       >
         <div
-          class="d-flex align-items-center justify-content-center gap-3 mb-5"
+          class="organisation-logo-container d-flex mt-5"
+          style="width: 440px; height: 75px"
+        >
+          <img
+            src="./imgs/LOGO.jpg"
+            alt="ECAPPZ Logo"
+            class="w-100 h-100 object-fit-cover"
+          />
+        </div>
+        <div
+          class="zoho-container d-flex mt-4 align-items-center justify-content-center"
         >
           <div
-            class="image-container d-flex"
-            style="width: 341px; height: 319px"
+            class="zoho-logo-container d-flex"
+            style="width: 172px; height: 73px"
           >
             <img
-              src="./imgs/WeAreECappz.png"
-              alt="We are ECappz"
+              src="./imgs/zoho-logo-512.png"
+              alt="Zoho Logo"
               class="w-100 h-100 object-fit-cover"
             />
           </div>
-          <h1 class="text-white" style="font-size: 3rem; font-weight: 900">
-            We<br />Are<br />ECAPPZ
-          </h1>
+          <span class="fw-medium fs-2 ms-2">Official Partner</span>
         </div>
-        <p class="text-white lh-base text-center" style="font-size: 16px">
-          We specialize in developing custom software solutions tailored to meet
-          your business needs. Whether it's mobile apps, web apps, or complex
-          enterprise solutions, we harness the power of Zoho products to bring
-          your ideas to life. Our expertise also extends to building
-          applications from scratch, ensuring a perfect fit for your unique
-          requirements.
+        <p class="tagline text-center mt-3" style="font-size: 16px">
+          Where your digital transformation begins.
         </p>
         <div
-          class="position-relative d-flex justify-content-end overflow-hidden"
-          style="margin-top: 12.9rem"
+          class="title-container"
+          style="margin-top: 6rem; margin-bottom: 9rem"
         >
-          <div class="d-flex justify-content-end z-1">
-            <div
-              class="plant-container d-flex"
-              style="width: 217px; height: 277px"
+          <div
+            id="app-name-container"
+            class="title-info-container text-center mb-5"
+          >
+            <span
+              class="d-inline-block fw-bold text-end"
+              style="font-size: 16px"
+              >App Name:</span
+            ><span
+              class="d-inline-block ms-3 text-start"
+              style="font-size: 16px"
+              >Issue Management App</span
             >
-              <img
-                src="./imgs/PottedPlant.png"
-                alt="Potted Plant"
-                class="w-100 h-100 object-fit-cover"
-              />
-            </div>
           </div>
           <div
-            class="position-absolute bg-design-container d-flex"
-            style="width: 323px; height: 315px; top: 25%; left: 87%"
+            id="quote-number-container"
+            class="title-info-container text-center mb-5"
           >
-            <img
-              src="./imgs/BgDesign.png"
-              alt="Plant Bg Design"
-              class="w-100 h-100 object-fit-cover"
-            />
+            <span
+              class="d-inline-block fw-bold text-end"
+              style="font-size: 16px"
+              >Quote No:</span
+            ><span
+              class="d-inline-block ms-3 text-start"
+              style="font-size: 16px"
+              >QT-000013</span
+            >
+          </div>
+          <div
+            id="quote-date-container"
+            class="title-info-container text-center"
+          >
+            <span
+              class="d-inline-block fw-bold text-end"
+              style="font-size: 16px"
+              >Quote Date:</span
+            ><span
+              class="d-inline-block ms-3 text-start"
+              style="font-size: 16px"
+              >10-Feb-2025</span
+            >
           </div>
         </div>
       </div>
+      <div class="curved-footer w-100 d-flex" style="height: 200px">
+        <img
+          src="./imgs/CurvedFooter.png"
+          alt="Curved Footer"
+          class="w-100 h-100 object-fit-stretch"
+        />
+      </div>
+    </div>
+    <div
+      id="cover-page"
+      class="second-page cover-page w-100 pb-0 avoid-break"
+      style="
+        background-color: #0863e7;
+        padding-left: 6rem;
+        padding-right: 6rem;
+        padding-top: 9.5rem;
+      "
+    >
+      <div class="d-flex align-items-center justify-content-center gap-3 mb-5">
+        <div class="image-container d-flex" style="width: 341px; height: 319px">
+          <img
+            src="./imgs/WeAreECappz.png"
+            alt="We are ECappz"
+            class="w-100 h-100 object-fit-cover"
+          />
+        </div>
+        <h1 class="text-white" style="font-size: 3rem; font-weight: 900">
+          We<br />Are<br />ECAPPZ
+        </h1>
+      </div>
+      <p class="text-white lh-base text-center" style="font-size: 16px">
+        We specialize in developing custom software solutions tailored to meet
+        your business needs. Whether it's mobile apps, web apps, or complex
+        enterprise solutions, we harness the power of Zoho products to bring
+        your ideas to life. Our expertise also extends to building applications
+        from scratch, ensuring a perfect fit for your unique requirements.
+      </p>
+      <div
+        class="position-relative d-flex justify-content-end overflow-hidden"
+        style="margin-top: 12.9rem"
+      >
+        <div class="d-flex justify-content-end z-1">
+          <div
+            class="plant-container d-flex"
+            style="width: 217px; height: 277px"
+          >
+            <img
+              src="./imgs/PottedPlant.png"
+              alt="Potted Plant"
+              class="w-100 h-100 object-fit-cover"
+            />
+          </div>
+        </div>
+        <div
+          class="position-absolute bg-design-container d-flex"
+          style="width: 323px; height: 315px; top: 25%; left: 87%"
+        >
+          <img
+            src="./imgs/BgDesign.png"
+            alt="Plant Bg Design"
+            class="w-100 h-100 object-fit-cover"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-design-container position-relative w-100">
       <div id="page" class="third-page d-flex">
         <div
           class="page-content"
           style="
+            margin-top: 2.5rem;
             margin-bottom: 2.5rem;
             margin-left: 5rem;
             margin-right: 5rem;
-            margin-top: 2.5rem;
           "
         >
           <div class="d-flex align-items-center">
@@ -317,9 +303,13 @@
           >
             Timeline and Milestones
           </p>
-          <table class="text-center" style="margin: 4rem auto; width: 90%">
-            <thead style="background-color: #0963e6; color: #ffffff">
-              <tr>
+          <table class="text-center" style="margin: 0 auto; width: 90%">
+            <thead>
+              <!-- Spacer row for print only -->
+              <tr class="print-spacer">
+                <th colspan="3" class="border border-0"></th>
+              </tr>
+              <tr style="background-color: #0963e6; color: #ffffff">
                 <th class="fw-normal">S.No</th>
                 <th class="fw-normal">Task Name</th>
                 <th class="fw-normal">Days</th>
@@ -484,115 +474,119 @@
           </table>
         </div>
       </div>
-      <div id="page" class="fourth-page position-relative avoid-break">
-        <div class="position-absolute top-0 start-0 w-100">
-          <div
-            class="ribbon page-title-container d-inline-flex position-relative w-100 justify-content-center align-items-center"
-            style="background: #0863e7; height: 55px"
-          >
-            <span
-              class="d-inline-block text-white"
-              style="font-weight: 900; font-size: 2rem; letter-spacing: 1px"
-            >
-              Cost and Payment Terms
-            </span>
-          </div>
-        </div>
+    </div>
+    <div id="page" class="fourth-page position-relative avoid-break">
+      <div class="position-absolute top-0 start-0 w-100">
         <div
-          class="page-content"
-          style="padding-left: 5rem; padding-right: 5rem; padding-top: 55px"
+          class="ribbon page-title-container d-inline-flex position-relative w-100 justify-content-center align-items-center"
+          style="background: #0863e7; height: 55px; margin-top: 2.3rem"
         >
-          <p
-            class="text-uppercase text-center mt-5 mb-3 fw-medium"
-            style="font-size: 1.15rem; letter-spacing: 1px"
+          <span
+            class="d-inline-block text-white"
+            style="font-weight: 900; font-size: 2rem; letter-spacing: 1px"
           >
-            No of estimated business days required to complete <br />
-            the project
-          </p>
-          <p
-            class="text-center"
-            style="
-              font-size: 4rem;
-              color: #004aad;
-              text-shadow: -2px -2px 4px #004aad20;
-            "
-          >
-            19
-          </p>
-          <p
-            class="m-0"
-            style="font-size: 1.3rem; font-weight: 800; letter-spacing: 1px"
-          >
-            Project Budget
-          </p>
-          <table class="w-100 text-center my-4">
-            <thead style="background-color: #0863e7; color: #ffffff">
-              <tr>
-                <th class="fw-normal">Description</th>
-                <th class="fw-normal">Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Total Development Cost</td>
-                <td>
-                  <i class="bi bi-currency-rupee" style="font-size: 16px"></i>
-                  30800
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <p style="margin-bottom: 3rem; font-size: 16px; line-height: 20px">
-            <span class="fw-bold" style="font-size: 16px; line-height: 20px"
-              >Note: </span
-            >The project cost mentioned above is exclusive of taxes. An
-            additional 18% GST will be applicable to the final amount.
-          </p>
-          <p
-            class="m-0"
-            style="font-size: 1.4rem; font-weight: 800; letter-spacing: 1px"
-          >
-            Payment Term
-          </p>
-          <table class="w-100 text-center mt-4" style="margin-bottom: 7.8rem">
-            <thead style="background-color: #cdd6ff">
-              <tr>
-                <th>Payment Phase</th>
-                <th>Payment Amount</th>
-                <th>Due Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Advance Payment</td>
-                <td>50% of Total Amount</td>
-                <td>Due at Project Start</td>
-              </tr>
-              <tr>
-                <td>Final Payment</td>
-                <td>50% of Total Amount</td>
-                <td>Due upon Project Delivery</td>
-              </tr>
-            </tbody>
-          </table>
+            Cost and Payment Terms
+          </span>
         </div>
       </div>
       <div
-        id="page"
-        class="fifth-page position-relative d-flex flex-column avoid-break mt-0"
-        style="height: 297mm"
+        class="page-content"
+        style="padding-left: 5rem; padding-right: 5rem; padding-top: 55px"
       >
-        <div class="position-absolute top-0 start-0" style="width: 90%">
-          <div
-            class="cut-ribbon d-inline-block position-relative"
-            style="background: #0863e7; width: 90%; height: 53px"
-          ></div>
-        </div>
-        <div
-          class="page-content"
-          style="width: 85%; margin: 0 auto; padding-top: 53px"
+        <p
+          class="text-uppercase text-center mt-5 mb-3 fw-medium"
+          style="font-size: 1.15rem; letter-spacing: 1px"
         >
+          No of estimated business days required to complete <br />
+          the project
+        </p>
+        <p
+          class="text-center"
+          style="
+            font-size: 4rem;
+            color: #004aad;
+            text-shadow: -2px -2px 4px #004aad20;
+          "
+        >
+          19
+        </p>
+        <p
+          class="m-0"
+          style="font-size: 1.3rem; font-weight: 800; letter-spacing: 1px"
+        >
+          Project Budget
+        </p>
+        <table class="w-100 text-center my-4">
+          <thead style="background-color: #0863e7; color: #ffffff">
+            <tr>
+              <th class="fw-normal">Description</th>
+              <th class="fw-normal">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Total Development Cost</td>
+              <td>
+                <i class="bi bi-currency-rupee" style="font-size: 16px"></i>
+                30800
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-bottom: 3rem; font-size: 16px; line-height: 20px">
+          <span class="fw-bold" style="font-size: 16px; line-height: 20px"
+            >Note: </span
+          >The project cost mentioned above is exclusive of taxes. An additional
+          18% GST will be applicable to the final amount.
+        </p>
+        <p
+          class="m-0"
+          style="font-size: 1.4rem; font-weight: 800; letter-spacing: 1px"
+        >
+          Payment Term
+        </p>
+        <table class="w-100 text-center mt-4" style="margin-bottom: 7.8rem">
+          <thead style="background-color: #cdd6ff">
+            <tr>
+              <th>Payment Phase</th>
+              <th>Payment Amount</th>
+              <th>Due Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Advance Payment</td>
+              <td>50% of Total Amount</td>
+              <td>Due at Project Start</td>
+            </tr>
+            <tr>
+              <td>Final Payment</td>
+              <td>50% of Total Amount</td>
+              <td>Due upon Project Delivery</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="sidebar-design-container position-relative w-100">
+      <div id="page" class="fifth-page position-relative avoid-break">
+        <header
+          class="position-relative"
+          style="width: 90%; height: 53px; background: #0863e7"
+        >
+          <!-- Slanting effect at the right end -->
+          <div
+            class="position-absolute top-0 end-0"
+            style="
+              border-style: solid;
+              border-width: 30px;
+              border-color: transparent white white transparent;
+            "
+          ></div>
+        </header>
+        <div class="page-content w-100" style="padding-top: 53px">
           <p
+            class="text-center"
             style="
               font-size: 3rem;
               font-weight: 900;
@@ -604,19 +598,19 @@
             Terms & Conditions
           </p>
           <ul
-            class="tnc-list position-relative"
-            style="list-style: none !important"
+            class="tnc-list position-relative text-center"
+            style="list-style: none !important; flex: 1; margin: 0 3rem"
           >
-            <li>
+            <li class="avoid-break">
               The paid advance amount is non-refundable unless no action is
               taken from our end after the payment is made.
             </li>
-            <li>
+            <li class="avoid-break">
               The scope of work will be defined in the initial agreement or
               project brief. Any additional features or modifications not
               outlined in the scope will incur additional costs
             </li>
-            <li>
+            <li class="avoid-break">
               The estimated project completion timeline is based on the
               information available at the time of agreement. The total
               development days are an estimate and may change depending on
@@ -624,45 +618,84 @@
               client, such as failure to provide required information or
               approval, may result in an extension of the project timeline.
             </li>
-            <li>
+            <li class="avoid-break">
               Upon final payment, the client will receive ownership of the
               developed app or software, excluding any third-party components or
               proprietary tools used.
             </li>
-            <li>
+            <li class="avoid-break">
               Both parties agree to maintain confidentiality concerning each
               other’s business, data, and any proprietary information shared
               during the course of the project.
             </li>
-            <li>
+            <li class="avoid-break">
               The client is responsible for procuring and managing any
               third-party services required for the project, such as hosting
               services, software licenses, or APIs.
             </li>
-            <li>
+            <li class="avoid-break">
               The company provides 30 days of free support after project
               delivery, covering issues within the developed modules or minor
               updates related to the original scope of work.
             </li>
-            <li>
+            <li class="avoid-break">
               If the support required includes major work beyond the original
               scope, additional charges will apply.
             </li>
-            <li>
+            <li class="avoid-break">
               After the 30-day free support period, the company offers monthly
               and annual maintenance plans. Additional charges may apply based
               on the scope of maintenance required.
             </li>
+            <li class="avoid-break">
+              Testing - Quisque eleifend purus non lacus posuere.
+            </li>
+            <li class="avoid-break">
+              Testing - Quisque eleifend purus non lacus posuere feugiat. Sed et
+              pharetra elit. Quisque vitae augue arcu.
+            </li>
+            <li class="avoid-break">
+              Testing Longer Text - Quisque eleifend purus non lacus posuere
+              feugiat. Sed et pharetra elit. Quisque vitae augue arcu. Cras
+              tristique neque nec massa.
+            </li>
+            <li class="avoid-break">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+              commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+              penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+              Donec quam felis
+            </li>
+            <li class="avoid-break">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+              commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+              penatibus
+            </li>
+            <li class="avoid-break">
+              Sit quaerat sint eum odit nostrum non nobis pariatur non
+              exercitationem eligendi. Eos velit illo et quasi nesciunt ex
+              eveniet saepe sit sequi rerum. Et tempora amet aut sequi placeat
+              est ducimus obcaecati qui quibusdam quaerat.
+            </li>
+            <li class="avoid-break">
+              Ea minus assumenda aut ipsum voluptatum sed delectus saepe cum
+              deleniti voluptatum aut quae necessitatibus est dicta eius quo
+              numquam placeat.
+            </li>
+            <li class="avoid-break">
+              Non doloribus optio non consequatur alias 33 quidem ullam vel
+              dolor neque aut libero cupiditate.
+            </li>
           </ul>
         </div>
-        <div
-          class="footer-bar w-100"
-          style="height: 85px; background-color: #0863e7; margin-top: auto"
-        ></div>
+        <footer
+          style="width: 100vw; height: 85px; background: #0863e7"
+        ></footer>
       </div>
+    </div>
+    <div class="sidebar-design-container position-relative w-100">
       <div
         id="page"
-        class="sixth-page pe-5 position-relative avoid-break mt-0"
+        class="sixth-page pe-5 position-relative avoid-break"
         style="height: 297mm"
       >
         <div class="page-content" style="width: 80%; margin: 0 auto">
