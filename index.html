@@ -36,6 +36,12 @@
         .print-spacer th {
           height: 2.5rem; /* Adjust this value as needed */
         }
+        .page-bg {
+          position: fixed;
+          width: 210mm;
+          height: 297mm;
+          z-index: -2;
+        }
       }
       .sidebar-design-container::before {
         content: "";
@@ -64,7 +70,7 @@
       .third-page table td {
         border: 1px solid black;
         padding: 10px;
-        font-size: 16px;
+        font-size: 14px;
       }
       .fourth-page .ribbon::before,
       .ribbon::after {
@@ -76,13 +82,13 @@
         left: -10px;
         top: 0;
         border-width: 27.5px;
-        border-color: transparent transparent transparent white;
+        border-color: transparent transparent transparent #ffffff;
       }
       .fourth-page .ribbon::after {
         right: -10px;
         top: 0;
         border-width: 27.5px;
-        border-color: transparent white transparent transparent;
+        border-color: transparent #ffffff transparent transparent;
       }
       .fourth-page table th,
       .fourth-page table td {
@@ -90,13 +96,19 @@
         padding: 20px;
         font-size: 16px;
       }
+      .fifth-page .tnc-list li:first-child {
+        padding-top: 0;
+      }
       .fifth-page .tnc-list li {
-        margin-bottom: 1rem;
+        padding-top: 1rem;
         font-family: "Poppins";
         font-size: 14px;
         line-height: 25px;
         font-weight: 400;
         text-align: justify;
+      }
+      .fifth-page .tnc-list li:last-child {
+        padding-bottom: 1rem;
       }
       .fifth-page .tnc-list li::before {
         content: "●"; /* Custom bullet */
@@ -109,6 +121,8 @@
     </style>
   </head>
   <body>
+    <!-- Fixed background element for print -->
+    <div class="page-bg"></div>
     <div id="front-page" class="first-page position-relative avoid-break">
       <div
         class="curved-header w-100 d-flex position-absolute top-0 start-0"
@@ -266,7 +280,7 @@
       </div>
     </div>
     <div class="sidebar-design-container position-relative w-100">
-      <div id="page" class="third-page d-flex">
+      <div id="page" class="third-page page-break-after">
         <div
           class="page-content"
           style="
@@ -276,7 +290,7 @@
             margin-right: 5rem;
           "
         >
-          <div class="d-flex align-items-center">
+          <div class="d-flex align-items-center pt-5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="25"
@@ -475,7 +489,11 @@
         </div>
       </div>
     </div>
-    <div id="page" class="fourth-page position-relative avoid-break">
+    <div
+      id="page"
+      class="fourth-page position-relative avoid-break"
+      style="padding-top: 8rem"
+    >
       <div class="position-absolute top-0 start-0 w-100">
         <div
           class="ribbon page-title-container d-inline-flex position-relative w-100 justify-content-center align-items-center"
@@ -489,12 +507,9 @@
           </span>
         </div>
       </div>
-      <div
-        class="page-content"
-        style="padding-left: 5rem; padding-right: 5rem; padding-top: 55px"
-      >
+      <div class="page-content text-center" style="width: 85%; margin: 0 auto">
         <p
-          class="text-uppercase text-center mt-5 mb-3 fw-medium"
+          class="text-uppercase text-center fw-medium"
           style="font-size: 1.15rem; letter-spacing: 1px"
         >
           No of estimated business days required to complete <br />
@@ -516,7 +531,7 @@
         >
           Project Budget
         </p>
-        <table class="w-100 text-center my-4">
+        <table class="text-center w-100 my-4">
           <thead style="background-color: #0863e7; color: #ffffff">
             <tr>
               <th class="fw-normal">Description</th>
@@ -572,19 +587,20 @@
       <div id="page" class="fifth-page position-relative avoid-break">
         <header
           class="position-relative"
-          style="width: 90%; height: 53px; background: #0863e7"
+          style="width: 90%; height: 15mm; background: #0863e7"
         >
           <!-- Slanting effect at the right end -->
           <div
-            class="position-absolute top-0 end-0"
+            class="position-absolute top-0"
             style="
               border-style: solid;
               border-width: 30px;
-              border-color: transparent white white transparent;
+              border-color: transparent #ffffff #ffffff transparent;
+              right: -1px;
             "
           ></div>
         </header>
-        <div class="page-content w-100" style="padding-top: 53px">
+        <div class="page-content w-100">
           <p
             class="text-center"
             style="
@@ -592,14 +608,14 @@
               font-weight: 900;
               margin-left: 4rem;
               margin-top: 1.5rem;
-              margin-bottom: 3rem;
+              margin-bottom: 2rem;
             "
           >
             Terms & Conditions
           </p>
           <ul
             class="tnc-list position-relative text-center"
-            style="list-style: none !important; flex: 1; margin: 0 3rem"
+            style="list-style: none !important; margin: 0 3rem"
           >
             <li class="avoid-break">
               The paid advance amount is non-refundable unless no action is
@@ -688,7 +704,7 @@
           </ul>
         </div>
         <footer
-          style="width: 100vw; height: 85px; background: #0863e7"
+          style="width: 100vw; height: 15mm; background: #0863e7"
         ></footer>
       </div>
     </div>
@@ -696,7 +712,7 @@
       <div
         id="page"
         class="sixth-page pe-5 position-relative avoid-break"
-        style="height: 297mm"
+        style="padding-top: 2.5rem; height: 297mm"
       >
         <div class="page-content" style="width: 80%; margin: 0 auto">
           <div
